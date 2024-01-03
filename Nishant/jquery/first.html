@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1tag"></h1>
+    <script>
+        // var
+        var car = 'maruti' ;
+        document.getElementById('h1tag').innerHTML = car;
+
+        var car = 'mahindra';
+        document.getElementById('h1tag').innerHTML += '<br>'+car;
+
+        // let 
+        // we are change this let value but we are not re-write let
+        let w=5;
+        let n=6;
+        let m= w+n;
+        document.getElementById('h1tag').innerHTML += "<br>"+w +" + "+n+ " = "+ m;
+
+        // const 
+        //  we are not re-write and not change const value
+
+        const a = 10;
+        const b = 6;
+        const c = a +b;
+        document.getElementById('h1tag').innerHTML += "<br>"+a +" + " +b +" = "+c;
+
+
+        // Operator
+        
+        // Addition Operator
+        let x = 10;
+        let y= 20;
+        var z = x + y;
+        document.getElementById('h1tag').innerHTML += "<br>"+x +" + "+y+ " = "+ z;
+
+        // multiplications Operator
+        var z = x * y;
+        document.getElementById('h1tag').innerHTML += "<br>"+x +" * "+y+ " = "+ z;
+
+        // Subtraction Operator
+        var z= x-y;
+        document.getElementById('h1tag').innerHTML += "<br>"+x +" - "+y+ " = "+ z;
+        
+        // Division Operator    
+        var z = x/y;
+        document.getElementById('h1tag').innerHTML += "<br>"+x +" / "+y+ " = "+ z;
+
+        // Modulus Operator
+        var z = x%y;
+        document.getElementById('h1tag').innerHTML += "<br>"+x +" % "+y+ " = "+ z;
+
+        // Increment Operator
+        x++
+        document.getElementById('h1tag').innerHTML += "<br>Increment  " +" x++ "+ (x-1)+" = " + x;
+
+        // Decrement Operator
+        y--
+        document.getElementById('h1tag').innerHTML += "<br>Decrement  " +" y-- "+ (y+1)+" = " + y;
+
+        // equal to
+        let num1 = 10;
+        let num2 = '10';
+        if(num1==num2){
+            console.log('match data')
+        }
+        else{
+            console.log('not match data')
+        }
+
+        //equal value and equal type
+        if (num1===num2){
+            console.log('match data type and value')
+        }
+        else{
+            console.log('not match data type and value')
+        }
+
+        // not equal to
+        if(num1!=num2){
+            console.log("not equal")
+        }
+        else{
+            console.log("match")
+        }
+
+        // not equal value or not equal type
+        if(num1!==num2){
+            console.log("not equal data type and value")
+        }
+        else{
+            console.log("match data type and value")
+        }
+
+        // greater then
+        num1 =20;
+        if(num1 > num2){
+            console.log( num1+ " greater than "+num2)
+        }
+        else{
+            console.log(num2+ " greater than "+num1)
+        }
+
+        // less then
+        num1 = 2;
+        if(num1 < num2){
+            console.log( num1+ " less than "+num2)
+        }
+        else{
+            console.log(num2+ " greater than "+num1)
+        }
+
+        // greater than or equal to
+        num1 = 20;
+        if(num1 >= num2){
+            console.log( num1+ " greater than or equal to "+num2)
+        }
+        else{
+            console.log(num2+ " greater than or equal to "+num1)
+        }
+
+        // less then or equal to
+        num1 = 2;
+        if(num1 < num2){
+            console.log( num1+ " less than or equal to "+num2)
+        }
+        else{
+            console.log(num2+ " greater than or equal to "+num1)
+        }
+
+        // logical and
+        num1=20;
+        num2=20;
+        let num4 = 20;
+        let num3 = 20;
+        if (num1==num2 && num3==num4){
+            console.log("if both conditions are true then return True")
+        }
+        else{
+            console.log("if only one conditions are false then return false")
+        }
+
+        // logical or
+
+        num3=10;
+        if(num1==num2  || num3==num4){
+            console.log("if any one conditions are true then return True")
+        }
+        else{
+            console.log("if both conditions are false then return false")
+        }
+        </script>
+</body>
+</html>
