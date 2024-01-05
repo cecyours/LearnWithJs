@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions</title>
+
+</head>
+<body>
+    <style>
+        /* Remove number input spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+    </style>
+    
+
+    <input oninput="CheckMarks()"  id="inp" style="height: 30px; width: 200px;" type="number" placeholder="Enter Your Marks ">
+    
+    
+    <h1 id="demo">
+
+    </h1>
+</body>
+
+<script>
+
+var x = document.getElementById('demo')
+
+
+
+// if Condition
+
+var a = 6 
+var b = 4 
+
+
+if(a > b ){
+    x.innerHTML = "You are correct "
+} 
+
+
+//  if else Condition
+
+var c = 2 
+var d = 4 
+
+
+if(c > d ){
+    x.innerHTML += "You are correct "
+} else {
+    x.innerHTML += " <br> no not correct"
+}
+
+
+// else if Conditions
+
+
+function CheckMarks(){
+    
+var marks = document.getElementById('inp').value
+    
+    if(marks > 100 ){
+        x.innerHTML = " <br> Result Not found "
+    }else 
+    if(marks > 70){
+        x.innerHTML = " <br> you are pass with distiction class"
+    } else if(marks > 60){
+        x.innerHTML = " <br> you are pass with first class "
+    }else if(marks> 50 ){
+        x.innerHTML = " <br> you are pass with avarage class "
+    }
+    else {
+        x.innerHTML = " <br> you are fail. "
+    
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
