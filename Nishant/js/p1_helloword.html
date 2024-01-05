@@ -6,10 +6,15 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="demo"><p>Hello World</p></div>
+    <div id="demo"></div>
+    <button class="btn" id="btn-id" onclick="click">click</button>
     <script>
-        let a = document.getElementById("demo")
-        console.log(a.innerHTML)
+        function click() {
+            console.log("hii")
+            let a = document.getElementById("demo")
+            a.innerHTML = "Hello wold";
+            console.log(a)
+        }
     </script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+      //         Using var
+      //         Using let
+      //         Using const
+
+      // var
+    var carName = "Volvo";
+    console.log(carName)
+    var carName;
+    console.log(carName)
+    // let
+    let Name = "Volvo";
+    let _lastName = "Johnson";
+    let _x = 2;
+    let _100 = 5;
+    let $ = "Hello World";
+    let $$$ = 2;
+    let $myMoney = 5;
+
+    document.getElementById("demo").innerHTML = Name;
+    // const
+    const cars = ["Saab", "Volvo", "BMW"];
+
+// Change an element:
+cars[0] = "Toyota";
+
+// Add an element:
+cars.push("Audi");
+
+// Display the Array:
+document.getElementById("demo").innerHTML = cars;
+    </script>
+</body>
+</html>
