@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and ID in JavaScript</title>
+    <style>
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Element with ID -->
+<div id="myId">Element with ID</div>
+
+<!-- Elements with the same class -->
+<p class="highlight">First paragraph</p>
+<p class="highlight">Second paragraph</p>
+
+<script>
+    // Access element by ID
+    var elementById = document.getElementById('myId');
+    if (elementById) {
+        elementById.innerHTML = 'Changed content by ID';
+    }
+
+    // Access elements by class
+    var elementsByClass = document.getElementsByClassName('highlight');
+    for (var i = 0; i < elementsByClass.length; i++) {
+        elementsByClass[i].style.fontWeight = 'bold';
+        console.log(elementsByClass[i].innerHTML);
+    }
+</script>
+
+</body>
+</html>
