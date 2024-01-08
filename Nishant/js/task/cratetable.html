@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <input type="number" id="input" placeholder="Enter a number">
+        <button id="submit" onclick="table()">submit</button>
+        <div id="table"></div>
+    </section>
+    <script>
+        function table(){
+            var i = document.getElementById('input').value
+            for (var x = 1 ; x<=10; x++){
+                var y = x*i
+                var row = document.createElement('p')
+                row.innerHTML = i +' ' +'*'+' '+x+' ' +'='+' ' + y + '<hr>'
+                document.getElementById('table').appendChild(row)
+
+            }
+        }
+    </script>
+</body>
+</html>

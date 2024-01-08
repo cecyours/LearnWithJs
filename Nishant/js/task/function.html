@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Data Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Student Data Table</h2>
+    <button id="data" on onclick="Result()">Show Result</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>English</th>
+          <th>Percentage</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody">
+        <tr id="studentTablerow"></tr>
+      </tbody>
+    </table>
+
+    <script>
+      function Result() {
+        var students = {
+          student: [
+            { name: "John Doe", marks: { math: 85, science: 90, english: 78 } },
+            {
+              name: "Jane Smith",
+              marks: { math: 92, science: 88, english: 95 },
+            },
+            {
+              name: "Alex Johnson",
+              marks: { math: 78, science: 85, english: 80 },
+            },
+            {
+              name: "Emily Davis",
+              marks: { math: 94, science: 91, english: 89 },
+            },
+            {
+              name: "Michael Brown",
+              marks: { math: 80, science: 82, english: 75 },
+            },
+            // Add more students as needed
+            {
+              name: "Sarah White",
+              marks: { math: 88, science: 86, english: 92 },
+            },
+            {
+              name: "Daniel Taylor",
+              marks: { math: 75, science: 79, english: 83 },
+            },
+            // ... (continue with more students)
+            {
+              name: "Olivia Harris",
+              marks: { math: 90, science: 93, english: 87 },
+            },
+            {
+              name: "William Turner",
+              marks: { math: 85, science: 87, english: 91 },
+            },
+          ],
+        };
+        var tableBody = document.getElementById("studentTableBody");
+        for (i in students) {
+          for (x in students[i]) {
+            var math = students.student[x].marks.math;
+            var science = students.student[x].marks.science;
+            var english = students.student[x].marks.english;
+            var percentage = ((math + science + english) * 100) / 300;
+
+            var row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${students.student[x].name}</td>
+                <td>${students.student[x].marks.math}</td>
+                <td>${students.student[x].marks.science}</td>
+                <td>${students.student[x].marks.english}</td>
+                <td>${percentage}</td>
+                `;
+            tableBody.appendChild(row);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

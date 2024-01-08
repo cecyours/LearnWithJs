@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+     
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="m-5">
-        <input type="number" id="number_1" placeholder="number 1">
-        <button class="btn btn-primary" onclick="demo()">submit</button>
-        <div id="output">
-
-        </div>
+      <input type="number" id="number_1" placeholder="number 1" />
+      <button class="btn btn-primary" onclick="demo()">submit</button>
+      <div id="output"></div>
     </section>
     <script>
-        function demo() {
-            number1 = parseInt(document.getElementById('number_1').value);
-            var output = document.getElementById('output');
-            
-            // if(number1 >0){
-            //     output.innerHTML="The number is positive.";
-            // }    
-            // else if (number1 < 0){
-            //     output.innerHTML="The number is Negative.";
-            // }
-            // else{
-            //     output.innerHTML='The number is Zero';
-            // }
-            // }
-            (number1>0) ? output.innerHTML="The number is positive." : (number1 < 0) ? output.innerHTML="The number is Negative." : output.innerHTML='The number is Zero';
-        }
-            </script>
+      function demo() {
+        number1 = parseInt(document.getElementById("number_1").value);
+        var output = document.getElementById("output");
+
+        // if(number1 >0){
+        //     output.innerHTML="The number is positive.";
+        // }
+        // else if (number1 < 0){
+        //     output.innerHTML="The number is Negative.";
+        // }
+        // else{
+        //     output.innerHTML='The number is Zero';
+        // }
+        // }
+        number1 > 0
+          ? (output.innerHTML = "The number is positive.")
+          : number1 < 0
+          ? (output.innerHTML = "The number is Negative.")
+          : (output.innerHTML = "The number is Zero");
+      }
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>
