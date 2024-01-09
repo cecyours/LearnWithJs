@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <input type="text" id="input" oninput="reverse()" placeholder="Enter  a something">
+        <div id="demo"></div>
+    </section>
+    <script>
+
+        function reverse(){
+            var n = document.getElementById('input').value
+            let text = '';
+            for (let i = n.length-1 ; i>=0; i--){
+                text+=n[i];
+            }
+            document.getElementById('demo').innerHTML=text;
+        }
+    </script>
+</body>
+</html>
