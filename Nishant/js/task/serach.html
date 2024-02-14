@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Student info</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <body>
+    <h2>Student Data Table</h2>
+    <div class="input m-2">
+      <input type="text" id="student" placeholder="Enter a Student Name" />
+      <input type="text" id="math" placeholder="Enter a Math Marks" />
+      <input type="text" id="science" placeholder="Enter a Science Marks" />
+      <input type="text" id="english" placeholder="Enter an English Marks" />
+      <button class="btn btn-dark" id="data" onclick="adddata()">Submit</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>English</th>
+          <th>
+            Percentage
+            <div class="input-group">
+              <input
+                type="search"
+                id="searchInput"
+                oninput="searchData()"
+                class="form-control rounded"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody"></tbody>
+    </table>
+    <script>
+      var students = [
+        { name: "John Doe", marks: { math: 85, science: 90, english: 78 } },
+        { name: "Jane Smith", marks: { math: 92, science: 88, english: 95 } },
+        { name: "Alex Johnson", marks: { math: 78, science: 85, english: 80 } },
+        { name: "Emily Davis", marks: { math: 94, science: 91, english: 89 } },
+        { name: "Michael Brown", marks: { math: 80, science: 82, english: 75 } },
+        { name: "Sarah White", marks: { math: 88, science: 86, english: 92 } },
+        { name: "Daniel Taylor", marks: { math: 75, science: 79, english: 83 } },
+        { name: "Olivia Harris", marks: { math: 90, science: 93, english: 87 } },
+        { name: "William Turner", marks: { math: 85, science: 87, english: 91 } },
+      ];
+
+      function adddata() {
+        var student = document.getElementById("student").value;
+        var math = document.getElementById("math").value;
+        var science = document.getElementById("science").value;
+        var english = document.getElementById("english").value;
+        var percentage = ((parseInt(math) + parseInt(science) + parseInt(english)) * 100) / 300;
+        var row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${student}</td>
+            <td>${math}</td>
+            <td>${science}</td>
+            <td>${english}</td>
+            <td>${percentage.toFixed(2)}</td>
+            `;
+        document.getElementById("studentTableBody").appendChild(row);
+        var studentData = {
+          name: student,
+          marks: {
+            math: math,
+            science: science,
+            english: english,
+          },
+          percentage: percentage,
+        };
+        students.push(studentData);
+      }
+
+      function Result() {
+        var tableBody = document.getElementById("studentTableBody");
+        for (var i in students) {
+          var math = students[i].marks.math;
+          var science = students[i].marks.science;
+          var english = students[i].marks.english;
+          var percentage = ((math + science + english) * 100) / 300;
+
+          var row = document.createElement("tr");
+          row.innerHTML = `
+                <td>${students[i].name}</td>
+                <td>${math}</td>
+                <td>${science}</td>
+                <td>${english}</td>
+                <td>${percentage.toFixed(2)}</td>
+                `;
+          tableBody.appendChild(row);
+        }
+      }
+
+      function searchData() {
+        var searchInput = parseFloat(document.getElementById("searchInput").value);
+        var tableBody = document.getElementById("studentTableBody");
+        tableBody.innerHTML = ""; // Clear existing rows
+
+        var filteredData = students.filter(function (student) {
+          var percentage = ((student.marks.math + student.marks.science + student.marks.english) * 100) / 300;
+          return percentage >= searchInput;
+        });
+
+        filteredData.forEach(function (student) {
+          var row = document.createElement("tr");
+          row.innerHTML = `
+                <td>${student.name}</td>
+                <td>${student.marks.math}</td>
+                <td>${student.marks.science}</td>
+                <td>${student.marks.english}</td>
+                <td>${(((student.marks.math + student.marks.science + student.marks.english) * 100) / 300).toFixed(2)}</td>
+                `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      Result();
+    </script>
+  </body>
+</html>

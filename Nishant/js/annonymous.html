@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="addnumber"></div>
+    <div id="operate"></div>
+    <div id="num"></div>
+    <div id="secert"></div>
+    <script>
+      var લગેપોલૂ = function (લહસ1, લહસ2) {
+        return લહસ1 + લહસ2;
+      };
+      document.getElementById("addnumber").innerHTML += લગેપોલૂ(10, 12);
+
+      function operateOnNumbers(num1, num2, operation) {
+        return operation(num1, num2);
+      }
+
+      var result = operateOnNumbers(10, 5, function (a, b) {
+        return a * b;
+      });
+
+      document.getElementById("operate").innerHTML += result;
+      Num = (num) => {
+        return num * num;
+      };
+      document.getElementById("num").innerHTML += Num(4);
+
+      (function () {
+        document.getElementById("secert").innerHTML +=
+          "This is a mystery. So don't show anyone because this is secret and you have nothing to hide so you relax";
+      })();
+    </script>
+  </body>
+</html>

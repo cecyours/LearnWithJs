@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="filter"></div>
+  </body>
+  <script>
+    const numbers = [1, 2, 3, 4, 5 ,-1,-2,-3];
+
+    // const doubledNumbers = numbers.map(function (number) {
+    //     if (number >=0 ){
+    //         return number;
+    //     }
+    //     else{
+    //         return -(number);
+    //     }
+    // });
+    const doubledNumbers = numbers.map(number => ( number >= 0 ? number : -number));
+    document.getElementById("map").innerHTML += doubledNumbers;
+
+
+    // const evenNumbers = numbers.filter(function(number){
+    //     return number % 2 === 0;
+    // })
+    const evenNumbers = numbers.filter(number => number % 2 === 0);
+    document.getElementById("filter").innerHTML += evenNumbers;
+  </script>
+</html>

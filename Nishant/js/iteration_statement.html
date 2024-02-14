@@ -1,49 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="m-5">
-        <input type="number" id="number_1" placeholder="number 1">
-        <button class="btn btn-primary" onclick="demo()">submit</button>
-        <div id="demo"></div>
+      <input type="number" id="number_1" placeholder="number 1" />
+      <button class="btn btn-primary" onclick="demo()">submit</button>
+      <div id="demo"></div>
     </section>
     <script>
-        function demo() {
-            var elementsWithId = parseInt(document.getElementById('number_1').value);
-            var output = document.getElementById('demo');
-            // for 
-            for (let i=0; i <= elementsWithId; i++  ){
-                console.log(i);
-                
+      function demo() {
+        var elementsWithId = parseInt(
+          document.getElementById("number_1").value
+        );
+        var output = document.getElementById("demo");
+        // for
+        for (let i = 0; i <= elementsWithId; i++) {
+          console.log(i);
+        }
+        // while
+        let i = 0;
+        while (i <= elementsWithId) {
+          console.log(i);
+          i++;
+        }
+        // do-while
+        i = 0;
+        do {
+          console.log(i);
+          i++;
+        } while (i <= elementsWithId);
+      }
+
+      const person = { fname: "John", lname: "Doe", age: 25 };
+      person.work = "developer";
+      for (i in person) {
+        console.log(person[i]);
+      }
+
+      for(var i=1; i<=100; i+=10){
+        for(var j =i ; j< i+10; j++){
+            document.write(j+ " ")
+        }
+        document.write("<br>")
+      }
+      for(var i=1;i<=5;i++){
+        for(var j =1; j<=i;j++){
+            document.write(j + " ")
+        }
+        document.write("<br>")
+      }
+        for(var i = 1 ; i<=5; i++){  
+            for(var j = 1; j<=i; j++){
+                document.write(i + " ") 
             }
-            // while
-            let i =0;
-            while(i <= elementsWithId ){
-                console.log(i);
-                i++;
-            }
-            // do-while
-            i =0;
-            do{
-                console.log(i);
-                i++;
-            }
-            while(i <= elementsWithId)        }
-            const person = {fname:"John", lname:"Doe", age:25};
-            person.work='developer'
-            for ( i in person){
-                console.log(person[i])
-            }
+            document.write("<br>")
+        }
+        for(var i=5 ; i>=1; i--){
+            for (var j=1 ; j<=i; j++){
+            document.write(i + " ")
+        }
+    document.write("<br>")}
+    for(var i =1 ; i<=5;i++){
+        for(var j = 5 ; j>=i;j--){
+            document.write(j+ " ")
+        }
+        document.write("<br>")
+    }
+    for (var i=5; i>=1;i--){
+        for(var j=i; j>=1;j--){
+            document.write(j+" ")
+        }
+        document.write("<br>")
+    }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-</body>
+  </body>
 </html>

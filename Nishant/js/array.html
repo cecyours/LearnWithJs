@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Arrays</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+  </body>
+  <script>
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // length
+    document.getElementById("demo").innerHTML += fruits.length + "<br>";
+    // tostring
+    document.getElementById("demo").innerHTML += fruits.toString() + "<br>";
+    // at
+    document.getElementById("demo").innerHTML += fruits.at(2) + "<br>";
+    document.getElementById("demo").innerHTML += fruits[1] + "<br>";
+    // join
+    document.getElementById("demo").innerHTML += fruits.join("-") + "<br>";
+    // pop
+    document.getElementById("demo").innerHTML += fruits.pop() + "<br>";
+    // push
+    document.getElementById("demo").innerHTML += fruits.push("Kiwi") + "<br>";
+    // shift
+    document.getElementById("demo").innerHTML += fruits.shift() + "<br>";
+    // unshift
+    document.getElementById("demo").innerHTML += fruits.unshift("Banana") + "<br>";
+    document.getElementById("demo").innerHTML += fruits + "<br>";
+    // Changing Elements
+    fruits[0] = "mango";
+    document.getElementById("demo").innerHTML += fruits + "<br>";
+    fruits[fruits.length] = "Banana";
+    document.getElementById("demo").innerHTML += fruits + "<br>";
+    // delete
+    delete fruits[0];
+    document.getElementById("demo").innerHTML += fruits + "<br>";
+    // concat
+    const myGirls = ["Cecilie", "Lone"];
+    const myBoys = ["Emil", "Tobias", "Linus"];
+    document.getElementById("demo").innerHTML += myGirls.concat(myBoys);;
+
+    const arr1 = ["Cecilie", "Lone"];
+    const arr2 = ["Emil", "Tobias", "Linus"];
+    const arr3 = ["Robin", "Morgan"];
+    document.getElementById("demo").innerHTML +=  "<br>"+arr1.concat(arr2,arr3); + "<br>";
+    const myArray = ["Emil", "Tobias", "Linus"];
+    document.getElementById("demo").innerHTML += "<br>"+myArray.concat("Peter"); + "<br>";
+    // copyWithin
+    const fruit = ["Banana", "Orange", "Apple", "Mango", "Kiwi", "Papaya"];
+    console.log(fruit.copyWithin(2,0));
+    document.getElementById("demo").innerHTML += "<br> "+ fruit; 
+    document.getElementById("demo").innerHTML += "<br> "+"this is copy within "+fruit.copyWithin(3,0); 
+    // flat
+    const myArr = [[1,2],[3,4],[5,6]];
+    const newArr = myArr.flat();
+    document.getElementById("demo").innerHTML += "<br>"+ newArr;
+
+    // splice
+    document.getElementById("demo1").innerHTML += "<br>"+ fruits;
+
+    fruits.splice(2,0,  "Lemon", "Kiwi");
+    document.getElementById("demo2").innerHTML += "<br>"+ fruits;
+
+    // tospliced
+    const months = ["Jan", "Feb", "Mar", "Apr"];
+
+    document.getElementById("demo").innerHTML += "<br>"+ months.toSpliced(0, 1);;
+
+    // slice
+    document.getElementById("demo").innerHTML += "<br>"+ fruits.slice(1)
+    
+    // Example: Generate a random number between -0.5 and 0.5
+    const randomValue = 0.5 - Math.random();
+
+    console.log(randomValue);
+
+  </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .abc {
+      color: white;
+      background-color: black;
+    }
+  </style>
+  <body>
+    <div id="demo">
+      <h1>This is dome</h1>
+      <h1></h1>
+      <p id="pra" class="prademo">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
+        molestiae tempore sequi! Unde porro aperiam recusandae dignissimos
+        consectetur ratione vitae explicabo rerum, aliquam rem velit eveniet
+        voluptatum possimus inventore esse!
+      </p>
+    </div>
+    <h1></h1>
+    <script>
+      // var target = document.querySelector('p').style.color = 'blue';
+      // var target = document.querySelector('p').className ;
+      // var target = document.querySelector('h1').classList.add('hello');
+      // var target = document.querySelector('h1').onclick = function(){
+      //     this.style.color = 'green'
+      // };
+
+      // var target = document.querySelector('h1').addEventListener('click', function(){
+      //     this.style.color ='white';
+      //     this.style.backgroundColor='black';
+      // })
+      // var target = document.querySelector('h1').removeEventListener()
+      var target = document.querySelector("h1").classList.toggle("abc");
+
+      console.log(target);
+    </script>
+  </body>
+</html>
